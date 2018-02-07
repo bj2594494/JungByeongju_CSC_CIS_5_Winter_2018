@@ -22,8 +22,8 @@ using namespace std;
 const int COLSMAX=24; //2-D array constant
 //Function Prototypes
 //Function for creating a board
-void crBoard(int [][COLSMAX],int,int);
-void flBoard(int [][COLSMAX],int,int);
+void crBoard(char [][COLSMAX],int,int);
+void flBoard(char [][COLSMAX],int,int);
 
 //Execution Begins Here
 int main(int argc, char** argv) {
@@ -32,8 +32,8 @@ int main(int argc, char** argv) {
     
     //Declare Variables
     const int ROWSMAX=24;
-    int myBoard[ROWSMAX][COLSMAX]; //The board that the players will see
-    int rlBoard[ROWSMAX][COLSMAX]; //The actual board with the location of mines
+    char myBoard[ROWSMAX][COLSMAX]; //The board that the players will see
+    char rlBoard[ROWSMAX][COLSMAX]; //The actual board with the location of mines
     
     int length, //side length of the game board
          mines; //number of mines
@@ -63,7 +63,7 @@ int main(int argc, char** argv) {
     return 0;
 }
 
-void flBoard(int array[][COLSMAX],int rows,int cols){
+void flBoard(char array[][COLSMAX],int rows,int cols){
     cout<<"  ";
     for(int n=0;n<cols;n++){
         cout<<n+1<<" ";
@@ -72,13 +72,13 @@ void flBoard(int array[][COLSMAX],int rows,int cols){
     for(int i=0;i<rows;i++){
         cout<<i+1<<" ";
         for(int j=0;j<cols;j++){
-            array[i][j];
+            array[i][j]='-';
         }
     cout<<endl;
     }
 }
 
-void crBoard(int array[][COLSMAX],int rows,int cols){
+void crBoard(char array[][COLSMAX],int rows,int cols){
     cout<<endl;
     cout<<"  ";
     for(int n=0;n<cols;n++){
